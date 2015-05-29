@@ -9,8 +9,8 @@
     <ProjectTypeGuids>{C089C8C0-30E0-4E22-80C0-CE093F111A43};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>FlickrNetWP7</RootNamespace>
-    <AssemblyName>FlickrNetWP7</AssemblyName>
+    <RootNamespace>FlickrNet</RootNamespace>
+    <AssemblyName>FlickrNet</AssemblyName>
     <TargetFrameworkVersion>v8.0</TargetFrameworkVersion>
     <SilverlightVersion>
     </SilverlightVersion>
@@ -107,7 +107,11 @@
     <Compile Include="BlogService.cs" />
     <Compile Include="BlogServiceCollection.cs" />
     <Compile Include="BoundaryBox.cs" />
+    <Compile Include="Brand.cs" />
+    <Compile Include="BrandCollection.cs" />
     <Compile Include="Cache.cs" />
+    <Compile Include="Camera.cs" />
+    <Compile Include="CameraCollection.cs" />
     <Compile Include="Cluster.cs" />
     <Compile Include="ClusterCollection.cs" />
     <Compile Include="Collection.cs" />
@@ -153,6 +157,7 @@
     <Compile Include="Flickr_AuthAsync.cs" />
     <Compile Include="Flickr_AuthCalc.cs" />
     <Compile Include="Flickr_BlogsAsync.cs" />
+    <Compile Include="Flickr_CamerasAsync.cs" />
     <Compile Include="Flickr_CollectionsAsync.cs" />
     <Compile Include="Flickr_CommonsAsync.cs" />
     <Compile Include="Flickr_ContactsAsync.cs" />
@@ -269,7 +274,7 @@
     <Compile Include="SafeNativeMethods.cs" />
     <Compile Include="SerializableAttribute.cs" />
     <Compile Include="ShapeDataCollection.cs" />
-    <Compile Include="ShapeDataSL.cs" />
+    <Compile Include="ShapeData.cs" />
     <Compile Include="SignatureRequiredException.cs" />
     <Compile Include="Sizes.cs" />
     <Compile Include="StatDomain.cs" />

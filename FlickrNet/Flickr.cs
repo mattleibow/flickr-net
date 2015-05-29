@@ -41,7 +41,7 @@ namespace FlickrNet
         /// </summary>
         public event EventHandler<UploadProgressEventArgs> OnUploadProgress;
 
-#if !(MONOTOUCH || WindowsCE || SILVERLIGHT)
+#if !(MONOTOUCH || WindowsCE || SILVERLIGHT || MONODROID)
         private static bool isServiceSet;
 #endif
         private static SupportedService defaultService = SupportedService.Flickr;
@@ -213,7 +213,7 @@ namespace FlickrNet
         {
             get
             {
-#if !(MONOTOUCH || WindowsCE || SILVERLIGHT)
+#if !(MONOTOUCH || WindowsCE || SILVERLIGHT || MONODROID)
                 if (!isServiceSet && FlickrConfigurationManager.Settings != null)
                 {
                     defaultService = FlickrConfigurationManager.Settings.Service;
@@ -225,7 +225,7 @@ namespace FlickrNet
             set
             {
                 defaultService = value;
-#if !(MONOTOUCH || WindowsCE || SILVERLIGHT)
+#if !(MONOTOUCH || WindowsCE || SILVERLIGHT || MONODROID)
                 isServiceSet = true;
 #endif
             }
@@ -243,7 +243,7 @@ namespace FlickrNet
             set
             {
                 service = value;
-#if !(MONOTOUCH || WindowsCE || SILVERLIGHT)
+#if !(MONOTOUCH || WindowsCE || SILVERLIGHT || MONODROID)
                 if (service == SupportedService.Zooomr) ServicePointManager.Expect100Continue = false;
 #endif
             }
@@ -338,7 +338,7 @@ namespace FlickrNet
             InstanceCacheDisabled = CacheDisabled;
             CurrentService = DefaultService;
 
-#if !(MONOTOUCH || WindowsCE || SILVERLIGHT)
+#if !(MONOTOUCH || WindowsCE || SILVERLIGHT || MONODROID)
 
             var settings = FlickrConfigurationManager.Settings;
             if (settings == null) return;

@@ -1,4 +1,4 @@
-#if !(MONOTOUCH || WindowsCE || SILVERLIGHT)
+#if !(MONOTOUCH || WindowsCE || SILVERLIGHT || MONODROID)
 using System;
 using System.Collections.Specialized;
 using System.Xml;

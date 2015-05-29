@@ -6,7 +6,7 @@ using System.Security.Permissions;
 [assembly: AssemblyDelaySign(false)]
 [assembly: AssemblyKeyName("")]
 
-#if !(MONOTOUCH || WindowsCE || SILVERLIGHT)
+#if !(MONOTOUCH || WindowsCE || SILVERLIGHT || MONODROID)
 [assembly: AllowPartiallyTrustedCallers()]
 [assembly: SecurityPermission(SecurityAction.RequestMinimum, Execution = true)]
 [assembly: System.Runtime.CompilerServices.InternalsVisibleTo("FlickrNetTest, PublicKey="+

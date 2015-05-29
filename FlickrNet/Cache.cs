@@ -45,7 +45,7 @@ namespace FlickrNet
         {
             get
             {
-#if !(WindowsCE || MONOTOUCH || SILVERLIGHT)
+#if !(WindowsCE || MONOTOUCH || SILVERLIGHT || MONODROID)
                 if (cacheDisabled == Tristate.Null && FlickrConfigurationManager.Settings != null)
                     cacheDisabled = FlickrConfigurationManager.Settings.CacheDisabled ? Tristate.True : Tristate.False;
 #endif
@@ -68,7 +68,7 @@ namespace FlickrNet
         {
             get
             {
-#if !(WindowsCE || MONOTOUCH || SILVERLIGHT)
+#if !(WindowsCE || MONOTOUCH || SILVERLIGHT || MONODROID)
                 if (cacheLocation == null && FlickrConfigurationManager.Settings != null)
                     cacheLocation = FlickrConfigurationManager.Settings.CacheLocation;
 #endif
@@ -76,11 +76,14 @@ namespace FlickrNet
                 {
                     try
                     {
-#if !(WindowsCE || MONOTOUCH || SILVERLIGHT)
+#if !(WindowsCE || MONOTOUCH || SILVERLIGHT || MONODROID)
                         cacheLocation = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "FlickrNet");
 #endif
 #if MONOTOUCH
                         cacheLocation = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Personal), "../Library/Caches");
+#endif
+#if MONODROID
+                        cacheLocation = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Personal), "../cache");
 #endif
 #if WindowsCE
                         cacheLocation = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Personal), "FlickrNetCache");
